@@ -1,20 +1,39 @@
 ﻿Public Class Word_Abklatsch
 
-    'Variablen der Klasse "Word_Abklatsch"
     Dim savepath As String
+    Dim TextfeldFont As Font
 
     Private Sub Word_Abklatsch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'Fontgrößen Combobox füllen
+        TextfeldFont = New Font("Trebuchet MS", 12) 'Standartfont beim Start des Programms
 
+        'Schriftgrößen-Array erstellen und füllen
+        Dim Schriftgröße(29) As Object
+        For i As Integer = 8 To 30
+            Schriftgröße(i - 8) = i
+        Next
+
+        ComboBoxSchriftgröße.Text = "Fontgröße auswählen" 'Auswahltext
+        ComboBoxSchriftgröße.Items.AddRange(Schriftgröße) 'Combobox mit Schriftgröße-Array füllen
     End Sub
 
-    Private Sub Fontgrößen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Fontgrößen.SelectedIndexChanged
+    Private Sub Word_Abklatsch_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        'Textfeldposition
+        Textfeld.Width = Me.Width - 300
+        Textfeld.Height = Me.Height - (MenuStrip1.Height + 50) - 50
+        Textfeld.Location = New Point(150, MenuStrip1.Height + 50)
+    End Sub
 
+    Private Sub Fontgrößen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSchriftgröße.SelectedIndexChanged
+        'Neue Font mit benutzerdefinierter Schriftgröße
+        Textfeld.Font = New Font("Trebuchet MS", ComboBoxSchriftgröße.SelectedItem)
+        
+        EinstellungenToolStripMenuItem.HideDropDown() 'Einstellungsmenü einklappen
     End Sub
 
     Private Sub NeuToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NeuToolStripMenuItem.Click
-        Dim NewDR As DialogResult = MessageBox.Show("Willst du wirklich ein neues Dokument erstellen?", "Warnung", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning)
+        Dim NewDR As DialogResult = MessageBox.Show("Willst du wirklich ein neues Dokument erstellen?", _
+                                                     "Warnung", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning)
         If NewDR = Windows.Forms.DialogResult.Yes Then
             Textfeld.Clear()
         End If
@@ -33,6 +52,7 @@
 
     Private Sub SpeichernToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernToolStripMenuItem.Click
         If savepath = "" Then
+            'Wenn noch nicht gespeichert, oder eine Datei geöffnet wurde
             Speichern_unter()
         Else
             Speichern()
@@ -59,11 +79,10 @@
     End Sub
 
     Private Sub SchließenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SchließenToolStripMenuItem.Click
-        Dim CloseDR As DialogResult = MessageBox.Show("Willst du das Programm wirklich schließen?", "Warnung", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning)
+        Dim CloseDR As DialogResult = MessageBox.Show("Willst du das Programm wirklich schließen?", _
+                                                      "Warnung", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning)
         If CloseDR = Windows.Forms.DialogResult.Yes Then
             Me.Close()
         End If
     End Sub
-
-
 End Class

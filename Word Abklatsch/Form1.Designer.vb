@@ -33,7 +33,7 @@ Partial Class Word_Abklatsch
         Me.SchließenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EinstellungenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontgrößeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Fontgrößen = New System.Windows.Forms.ToolStripComboBox()
+        Me.ComboBoxSchriftgröße = New System.Windows.Forms.ToolStripComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -106,20 +106,21 @@ Partial Class Word_Abklatsch
         '
         'FontgrößeToolStripMenuItem
         '
-        Me.FontgrößeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Fontgrößen})
+        Me.FontgrößeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComboBoxSchriftgröße})
         Me.FontgrößeToolStripMenuItem.Name = "FontgrößeToolStripMenuItem"
-        Me.FontgrößeToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.FontgrößeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.FontgrößeToolStripMenuItem.Text = "Fontgröße"
         '
-        'Fontgrößen
+        'ComboBoxSchriftgröße
         '
-        Me.Fontgrößen.Name = "Fontgrößen"
-        Me.Fontgrößen.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBoxSchriftgröße.Name = "ComboBoxSchriftgröße"
+        Me.ComboBoxSchriftgröße.Size = New System.Drawing.Size(121, 23)
         '
         'Word_Abklatsch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(747, 468)
         Me.Controls.Add(Me.Textfeld)
         Me.Controls.Add(Me.MenuStrip1)
@@ -143,6 +144,6 @@ Partial Class Word_Abklatsch
     Friend WithEvents SchließenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EinstellungenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FontgrößeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Fontgrößen As System.Windows.Forms.ToolStripComboBox
+    Friend WithEvents ComboBoxSchriftgröße As System.Windows.Forms.ToolStripComboBox
 
 End Class

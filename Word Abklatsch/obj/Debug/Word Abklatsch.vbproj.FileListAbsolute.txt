@@ -12,3 +12,13 @@ C:\Users\Lukas\Documents\Visual Studio 2013\Projects\Word Abklatsch\Word Abklats
 C:\Users\Lukas\Documents\Visual Studio 2013\Projects\Word Abklatsch\Word Abklatsch\obj\Debug\Word Abklatsch.exe
 C:\Users\Lukas\Documents\Visual Studio 2013\Projects\Word Abklatsch\Word Abklatsch\obj\Debug\Word Abklatsch.xml
 C:\Users\Lukas\Documents\Visual Studio 2013\Projects\Word Abklatsch\Word Abklatsch\obj\Debug\Word Abklatsch.pdb
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\bin\Debug\Word Abklatsch.exe.config
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\obj\Debug\Word Abklatsch.exe
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\obj\Debug\Word Abklatsch.xml
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\obj\Debug\Word Abklatsch.pdb
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\bin\Debug\Word Abklatsch.exe
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\bin\Debug\Word Abklatsch.pdb
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\bin\Debug\Word Abklatsch.xml
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\obj\Debug\Word_Abklatsch.Word_Abklatsch.resources
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\obj\Debug\Word_Abklatsch.Resources.resources
+C:\Users\Lukas\Documents\GitHub\Word_Abklatsch\Word Abklatsch\obj\Debug\Word Abklatsch.vbproj.GenerateResource.Cache
