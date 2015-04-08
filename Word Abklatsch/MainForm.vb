@@ -1,11 +1,16 @@
 ﻿Public Class Word_Abklatsch
 
     Dim savepath As String
-    Dim TextfeldFont As Font
 
     Private Sub Word_Abklatsch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        TextfeldFont = New Font("Trebuchet MS", 12) 'Standartfont beim Start des Programms
+        If My.Settings.Benutzerfont Is Nothing Then
+            Textfeld.Font = New Font("Trebuchet MS", 12) 'Standartfont beim Start des Programms
+            ComboBoxSchriftgröße.Text = "12"
+        Else
+            Textfeld.Font = My.Settings.Benutzerfont
+            ComboBoxSchriftgröße.Text = Textfeld.Font.Size
+        End If
 
         'Schriftgrößen-Array erstellen und füllen
         Dim Schriftgröße(29) As Object
@@ -13,7 +18,6 @@
             Schriftgröße(i - 8) = i
         Next
 
-        ComboBoxSchriftgröße.Text = "Fontgröße auswählen" 'Auswahltext
         ComboBoxSchriftgröße.Items.AddRange(Schriftgröße) 'Combobox mit Schriftgröße-Array füllen
     End Sub
 
@@ -26,8 +30,11 @@
 
     Private Sub Fontgrößen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSchriftgröße.SelectedIndexChanged
         'Neue Font mit benutzerdefinierter Schriftgröße
-        Textfeld.Font = New Font("Trebuchet MS", ComboBoxSchriftgröße.SelectedItem)
-        
+        My.Settings.Benutzerfont = New Font("Trebuchet MS", ComboBoxSchriftgröße.SelectedItem)
+        My.Settings.Save()
+        Textfeld.Font = My.Settings.Benutzerfont
+        ComboBoxSchriftgröße.Text = Textfeld.Font.Size
+
         EinstellungenToolStripMenuItem.HideDropDown() 'Einstellungsmenü einklappen
     End Sub
 
@@ -70,7 +77,7 @@
         SaveAsDialog.Filter = "Textdatei | *.txt" 'Nur Textdateien anzeigen
         SaveAsDialog.ShowDialog() 'Dialog anzeigen
 
-        SaveAsDialog.FileName = savepath 'Pfad der Datei soll nun "savepath" sein
+        savepath = SaveAsDialog.FileName 'Pfad der Datei soll nun "savepath" sein
         IO.File.WriteAllText(savepath, Textfeld.Text) 'Inhalt des Textfeldes in die Datei schreiben
     End Sub
 
